@@ -10,5 +10,9 @@
   {
     "text": "novo item",
     "completed": false
+  },
+  {
+    "text": "aplicação",
+    "completed": false
   }
 ]
