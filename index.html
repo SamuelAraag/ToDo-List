@@ -9,19 +9,39 @@
 <body>
     <div class="container">
         <div class="todo-app">
-            <div class="titulo-todo-list">
-                <h2>To-Do List 
-                </h2>
-                <span class="list-icon"></span>
-            </div>
+            <h2>To-Do List<span class="list-icon"></span></h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Adicione sua tarefa">
-                <button>Adicionar</button>
+                <button id="add-button" class="botao-adicionar">Adicionar</button>
             </div>
             <ul id="list-container">
-                </ul>
+            </ul>
         </div>
     </div>
+
+    <div id="token-modal" class="modal-hidden">
+        <div class="modal-content">
+            <h3>Token do GitHub Necessário</h3>
+            <div class="info-container">
+                Para salvar suas tarefas, por favor insira seu Personal Access Token do GitHub.
+                <span class="info-icon">
+                    ?
+                    <div class="info-tooltip">
+                        <h4>Como conseguir o token?</h4>
+                        <ol>
+                            <li>Vá em <strong>Settings</strong> > <strong>Developer settings</strong> > <strong>Personal access tokens</strong> > <strong>Tokens (classic)</strong> no GitHub.</li>
+                            <li>Clique em <strong>Generate new token</strong>.</li>
+                            <li>Dê um nome, defina a expiração e selecione o escopo <strong>repo</strong>.</li>
+                            <li>Clique em <strong>Generate token</strong> e copie o valor.</li>
+                        </ol>
+                    </div>
+                </span>
+            </div>
+            <input type="text" id="token-input" placeholder="Insira seu token aqui...">
+            <button id="save-token-btn">Salvar Token</button>
+        </div>
+    </div>
+
     <script type="module" src="src/script.js"></script>
 </body>
 </html>
