@@ -1,18 +1,1 @@
-[
-  {
-    "text": "Estudar JavaScript",
-    "completed": true
-  },
-  {
-    "text": "Comprar pÃ£o integral",
-    "completed": true
-  },
-  {
-    "text": "novo item",
-    "completed": false
-  },
-  {
-    "text": "aplicação",
-    "completed": false
-  }
-]
+%5B%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22Estudar%2520JavaScript%22%2C%0A%20%20%20%20%22completed%22%3A%20true%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22Comprar%2520p%25C3%2583%25C2%25A3o%2520integral%22%2C%0A%20%20%20%20%22completed%22%3A%20true%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22novo%2520item%22%2C%0A%20%20%20%20%22completed%22%3A%20false%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22aplica%25C3%25A7%25C3%25A3o%22%2C%0A%20%20%20%20%22completed%22%3A%20false%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22teste%2520aplica%25C3%25A7%25C3%25A3o%22%2C%0A%20%20%20%20%22completed%22%3A%20false%0A%20%20%7D%0A%5D
