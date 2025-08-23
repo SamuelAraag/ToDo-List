@@ -35,7 +35,7 @@ async function fetchTasks() {
         }
         
         const data = await response.json();
-        const decodedContent = atob(data.content);
+        const decodedContent = decodeURIComponent(atob(data.content));
         const tasks = JSON.parse(decodedContent);
         
         return { sha: data.sha, tasks: tasks };
@@ -53,7 +53,7 @@ async function fetchTasks() {
  */
 async function saveTasks(tasks, sha) {
     const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
-    const content = btoa(JSON.stringify(tasks, null, 2));
+    const content = btoa(encodeURIComponent(JSON.stringify(tasks, null, 2)));
 
     const body = {
         message: 'Atualiza tarefas via API',
