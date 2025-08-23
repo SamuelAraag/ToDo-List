@@ -2,5 +2,9 @@
   {
     "text": "Criar%20funda%C3%A7%C3%A3o%20do%20To-Do%20List",
     "completed": true
+  },
+  {
+    "text": "Fluxo%20de%20configura%C3%A7%C3%A3o%20da%20autentica%C3%A7%C3%A3o",
+    "completed": false
   }
 ]
