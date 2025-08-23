@@ -10,5 +10,9 @@
   {
     "text": "Nova task",
     "completed": false
+  },
+  {
+    "text": "Implementar banco de dados",
+    "completed": false
   }
 ]
