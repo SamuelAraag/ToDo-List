@@ -6,5 +6,9 @@
   {
     "text": "Comprar pão integral",
     "completed": true
+  },
+  {
+    "text": "Fazer nova tarefa",
+    "completed": false
   }
 ]
