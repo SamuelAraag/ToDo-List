@@ -14,5 +14,9 @@
   {
     "text": "Implementar banco de dados",
     "completed": true
+  },
+  {
+    "text": "aprovação",
+    "completed": false
   }
 ]
