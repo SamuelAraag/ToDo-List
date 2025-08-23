@@ -1,10 +1,1 @@
-[
-  {
-    "text": "Estudar JavaScript",
-    "completed": true
-  },
-  {
-    "text": "Comprar pão integral",
-    "completed": false
-  }
-]
+%5B%0A%20%20%7B%0A%20%20%20%20%22text%22%3A%20%22Estudar%20JavaScript%22%2C%0A%20%20%20%20%22completed%22%3A%20true%0A%20%20%7D%0A%5D
