@@ -9,7 +9,7 @@
   },
   {
     "text": "Nova task",
-    "completed": false
+    "completed": true
   },
   {
     "text": "Implementar banco de dados",
