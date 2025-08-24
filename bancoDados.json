@@ -18,12 +18,12 @@
     },
     {
       "text": "Nova%20tarefa",
-      "completed": false
+      "completed": true
     },
     {
       "text": "Nova%20tarefaasd%20asd%20fasd",
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T18:38:15.030Z"
+  "last_updated": "2025-08-24T18:38:17.658Z"
 }
