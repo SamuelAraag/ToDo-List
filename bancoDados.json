@@ -2,12 +2,12 @@
   "tasks": [
     {
       "text": "Nova%20tarefa",
-      "completed": true
+      "completed": false
     },
     {
       "text": "outra%20tarefa",
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T19:50:38.969Z"
+  "last_updated": "2025-08-24T19:50:42.495Z"
 }
