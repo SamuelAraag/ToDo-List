@@ -5,10 +5,11 @@ const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 const addButton = document.getElementById("add-button");
 
-// Variáveis para o modal
 const tokenModal = document.getElementById("token-modal");
 const tokenInput = document.getElementById("token-input");
 const saveTokenBtn = document.getElementById("save-token-btn");
+
+const debouncedSave = debounce(saveTask, 3000);
 
 let tasks = [];
 let currentSha = null;
@@ -16,6 +17,7 @@ let currentSha = null;
 function renderTasks() {
     listContainer.innerHTML = '';
     tasks.forEach((task, index) => {
+        task.text = decodeURIComponent(task.text)
         const li = document.createElement("li");
         li.textContent = task.text;
 
@@ -40,12 +42,13 @@ function renderTasks() {
 
 function toggleTask(index) {
     tasks[index].completed = !tasks[index].completed;
-    saveAndRender();
+    debouncedSave();
 }
 
 function deleteTask(index) {
     tasks.splice(index, 1);
-    saveAndRender();
+    renderTasks();
+    debouncedSave();
 }
 
 function addTask() {
@@ -58,12 +61,16 @@ function addTask() {
     tasks.push({ text: taskText, completed: false });
 
     inputBox.value = "";
-    saveAndRender();
+    renderTasks();
+    debouncedSave();
 }
 
-async function saveAndRender() {
+async function saveTask() {
     currentSha = await saveTasks(tasks, currentSha);
-    renderTasks();
+    
+    tasks.forEach(task => {
+        task.text = decodeURIComponent(task.text)
+    })
 }
 
 async function loadTasks() {
@@ -71,6 +78,16 @@ async function loadTasks() {
     tasks = data.tasks;
     currentSha = data.sha;
     renderTasks();
+}
+
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
 }
 
 function initApp() {
@@ -88,7 +105,6 @@ saveTokenBtn.addEventListener('click', () => {
     const token = tokenInput.value.trim();
     if (token) {
         setItem('githubToken', token);
-        // Esconde o modal e carrega as tarefas sem recarregar a página
         tokenModal.classList.add('modal-hidden');
         loadTasks();
     } else {
