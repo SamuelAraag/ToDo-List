@@ -10,5 +10,9 @@
   {
     "text": "Adicionar%20op%C3%A7%C3%A3o%20de%20remo%C3%A7%C3%A3o%20de%20tarefa",
     "completed": false
+  },
+  {
+    "text": "Implementar%20check%20da%20tarefa",
+    "completed": false
   }
 ]
