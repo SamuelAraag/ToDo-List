@@ -54,6 +54,7 @@ async function loadTasks() {
 
     if (dataRemote.data) {
         const remoteTime = new Date(dataRemote.data.last_updated);
+        
         const localTime = lastUpdatedLocal 
             ? new Date(lastUpdatedLocal) 
             : null;
