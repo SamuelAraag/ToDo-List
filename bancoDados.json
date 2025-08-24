@@ -26,5 +26,9 @@
   {
     "text": "Atualizar%20tarefas%20com%20rotina%20a%20cada%205%20segundos",
     "completed": false
+  },
+  {
+    "text": "Nova%20tarefa",
+    "completed": false
   }
 ]
