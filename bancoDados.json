@@ -1,10 +1,6 @@
 {
   "tasks": [
     {
-      "text": "2",
-      "completed": false
-    },
-    {
       "text": "3",
       "completed": false
     },
@@ -25,5 +21,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T18:46:25.763Z"
+  "last_updated": "2025-08-24T18:47:03.052Z"
 }
