@@ -9,7 +9,7 @@ const tokenModal = document.getElementById("token-modal");
 const tokenInput = document.getElementById("token-input");
 const saveTokenBtn = document.getElementById("save-token-btn");
 
-const debouncedSave = debounce(saveTask, 3000);
+const debouncedSave = debounce(saveTask, 1000);
 
 let tasks = [];
 let currentSha = null;
