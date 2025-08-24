@@ -6,6 +6,7 @@ const API_BASE_URL = 'https://api.github.com';
 const owner = 'SamuelAraag';
 const repo = 'ToDo-List';
 const filePath = 'bancoDados.json';
+const refBranch = 'nao-remover-estrategia-banco-de-dados';
 
 function getHeaders() {
     const token = getItem('githubToken');
@@ -21,7 +22,7 @@ function getHeaders() {
  * @returns {Promise<Object>} Um objeto com o SHA e a lista de tarefas, ou um objeto com valores nulos/vazios.
  */
 async function fetchTasks() {
-    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
+    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}?ref=${refBranch}`;
     try {
         const response = await fetch(url, 
             { 
@@ -59,7 +60,7 @@ async function fetchTasks() {
  * @returns {Promise<string|null>} O novo SHA do arquivo ou null em caso de erro.
  */
 async function saveTasks(dataToSave, sha) {
-    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
+    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}?ref=${refBranch}`;
     
     dataToSave.tasks.forEach(task => {
         task.text = encodeURIComponent(task.text);
