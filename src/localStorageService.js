@@ -61,7 +61,6 @@ const init = () => {
         const testKey = '__test__';
         localStorage.setItem(testKey, testKey);
         localStorage.removeItem(testKey);
-        console.log("Serviço de localStorage inicializado com sucesso.");
         return true;
     } catch (error) {
         console.error("localStorage não está disponível ou acessível. A aplicação não poderá salvar dados de forma persistente.");

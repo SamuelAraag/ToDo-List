@@ -7,7 +7,6 @@ const owner = 'SamuelAraag';
 const repo = 'ToDo-List';
 const filePath = 'bancoDados.json';
 
-// Função para obter o cabeçalho de autorização dinamicamente
 function getHeaders() {
     const token = getItem('githubToken');
     return {
@@ -27,7 +26,6 @@ async function fetchTasks() {
         const response = await fetch(url, { headers: getHeaders() });
         
         if (!response.ok) {
-            // Se o arquivo não existe (404), ou outro erro, retorna um objeto padrão.
             if (response.status === 404) {
                 return { sha: null, tasks: [] };
             }
@@ -35,8 +33,16 @@ async function fetchTasks() {
         }
         
         const data = await response.json();
-        const decodedContent = decodeURIComponent(atob(data.content));
+        const decodedContent = decodeURIComponent(escape(atob(data.content)));
+
+        if (decodedContent.trim() === '') {
+            return { sha: data.sha, tasks: [] };
+        }
+
         const tasks = JSON.parse(decodedContent);
+        tasks.forEach(task =>{
+            task.text = decodeURIComponent(task.text)
+        })
         
         return { sha: data.sha, tasks: tasks };
     } catch (error) {
@@ -53,7 +59,12 @@ async function fetchTasks() {
  */
 async function saveTasks(tasks, sha) {
     const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
-    const content = btoa(encodeURIComponent(JSON.stringify(tasks, null, 2)));
+    
+    tasks.forEach(task => {
+        task.text = encodeURIComponent(task.text)
+    })
+    
+    const content = btoa(JSON.stringify(tasks, null, 2));
 
     const body = {
         message: 'Atualiza tarefas via API',
@@ -73,7 +84,6 @@ async function saveTasks(tasks, sha) {
         }
 
         const data = await response.json();
-        console.log('Arquivo salvo com sucesso no GitHub:', data);
         return data.content.sha;
         
     } catch (error) {
