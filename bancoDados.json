@@ -34,5 +34,9 @@
   {
     "text": "asdfasdf",
     "completed": true
+  },
+  {
+    "text": "%C3%A7%C3%A7%C3%A7%C3%A7",
+    "completed": false
   }
 ]
