@@ -1,22 +1,22 @@
 [
   {
     "text": "Criar%20funda%C3%A7%C3%A3o%20do%20projeto",
-    "completed": false
+    "completed": true
   },
   {
     "text": "Implementar%20tela%20de%20cria%C3%A7%C3%A3o%20das%20tarefas",
-    "completed": false
+    "completed": true
   },
   {
     "text": "Adicionar%20op%C3%A7%C3%A3o%20de%20remo%C3%A7%C3%A3o%20de%20tarefa",
-    "completed": false
+    "completed": true
   },
   {
     "text": "Implementar%20check%20da%20tarefa",
-    "completed": false
+    "completed": true
   },
   {
     "text": "Criar%20conceito%20de%20banco%20de%20dados%20no%20reposit%C3%B3rio",
-    "completed": false
+    "completed": true
   }
 ]
