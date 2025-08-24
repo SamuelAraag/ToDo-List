@@ -1,26 +1,26 @@
 [
   {
-    "text": "Criar%2520funda%25C3%25A7%25C3%25A3o%2520do%2520projeto",
+    "text": "Criar%20funda%C3%A7%C3%A3o%20do%20projeto",
     "completed": true
   },
   {
-    "text": "Implementar%2520tela%2520de%2520cria%25C3%25A7%25C3%25A3o%2520das%2520tarefas",
+    "text": "Implementar%20tela%20de%20cria%C3%A7%C3%A3o%20das%20tarefas",
     "completed": true
   },
   {
-    "text": "Adicionar%2520op%25C3%25A7%25C3%25A3o%2520de%2520remo%25C3%25A7%25C3%25A3o%2520de%2520tarefa",
+    "text": "Adicionar%20op%C3%A7%C3%A3o%20de%20remo%C3%A7%C3%A3o%20de%20tarefa",
     "completed": true
   },
   {
-    "text": "Implementar%2520check%2520da%2520tarefa",
+    "text": "Implementar%20check%20da%20tarefa",
     "completed": true
   },
   {
-    "text": "Possibilitar%2520editar%2520texto%2520da%2520tarefa",
+    "text": "Possibilitar%20editar%20texto%20da%20tarefa",
     "completed": true
   },
   {
-    "text": "novo%2520item",
+    "text": "novo%20item",
     "completed": false
   },
   {
@@ -32,7 +32,7 @@
     "completed": true
   },
   {
-    "text": "%25C3%25A7%25C3%25A7%25C3%25A7%25C3%25A7",
-    "completed": false
+    "text": "%C3%A7%C3%A7%C3%A7%C3%A7",
+    "completed": true
   }
 ]
