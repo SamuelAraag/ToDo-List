@@ -33,7 +33,7 @@ async function fetchTasks() {
         }
         
         const data = await response.json();
-        const decodedContent = decodeURIComponent(escape(atob(data.content)));
+        const decodedContent = decodeURIComponent(atob(data.content));
 
         if (decodedContent.trim() === '') {
             return { sha: data.sha, tasks: [] };
@@ -61,8 +61,8 @@ async function saveTasks(tasks, sha) {
     const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
     
     tasks.forEach(task => {
-        task.text = encodeURIComponent(task.text)
-    })
+        task.text = encodeURIComponent(task.text);
+    });
     
     const content = btoa(JSON.stringify(tasks, null, 2));
 
