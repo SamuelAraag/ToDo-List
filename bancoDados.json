@@ -2,12 +2,12 @@
   "tasks": [
     {
       "text": "Estudar%20JavaScript",
-      "completed": false
+      "completed": true
     },
     {
       "text": "Nova%20tarefa",
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T13:57:37.372Z"
+  "last_updated": "2025-08-24T13:57:38.441Z"
 }
