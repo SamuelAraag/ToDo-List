@@ -1,83 +1,13 @@
 import { fetchTasks, saveTasks } from './apiService.js';
 import { setItem, getItem } from './localStorageService.js';
-
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
-const addButton = document.getElementById("add-button");
-
-const tokenModal = document.getElementById("token-modal");
-const tokenInput = document.getElementById("token-input");
-const saveTokenBtn = document.getElementById("save-token-btn");
+import { renderTasks, setupEventListeners, clearInputBox } from './domService.js';
 
 const debouncedSave = debounce(saveTask, 1000);
 
 let tasks = [];
 let currentSha = null;
-
-function renderTasks() {
-    listContainer.innerHTML = '';
-    tasks.forEach((task, index) => {
-        task.text = decodeURIComponent(task.text);
-
-        const li = document.createElement("li");
-        li.textContent = task.text;
-
-        if (task.completed) {
-            li.classList.add('checked');
-        }
-
-        const span = document.createElement("span");
-        span.textContent = "\u00d7";
-
-        span.addEventListener('click', (e) => {
-            e.stopPropagation();
-            deleteTask(index);
-        });
-
-        li.appendChild(span);
-        listContainer.appendChild(li);
-
-        li.addEventListener('click', () => toggleTask(index));
-    });
-}
-
-function toggleTask(index) {
-    tasks[index].completed = !tasks[index].completed;
-    renderTasks();
-    debouncedSave();
-}
-
-function deleteTask(index) {
-    tasks.splice(index, 1);
-    renderTasks();
-    debouncedSave();
-}
-
-function addTask() {
-    const taskText = inputBox.value.trim();
-    if (taskText === '') {
-        alert("Você precisa escrever alguma coisa!");
-        return;
-    }
-
-    tasks.push({ text: taskText, completed: false });
-
-    inputBox.value = "";
-    renderTasks();
-    debouncedSave();
-}
-
-async function saveTask() {
-    await loadTasks();
-    currentSha = await saveTasks(tasks, currentSha);
-}
-
-async function loadTasks() {
-    const data = await fetchTasks();
-    tasks = data.tasks;
-    currentSha = data.sha;
-    renderTasks();
-}
+let lastUpdatedLocal = null;
+let lastFetchedTasksString = '[]'; 
 
 function debounce(func, delay) {
     let timeoutId;
@@ -89,6 +19,28 @@ function debounce(func, delay) {
     };
 }
 
+async function saveTask() {
+    const localTasksString = JSON.stringify(tasks);
+
+    if (localTasksString === lastFetchedTasksString) {
+        return;
+    }
+
+    const dataToSave = {
+        tasks: tasks,
+        last_updated: new Date().toISOString()
+    };
+    
+    const result = await saveTasks(dataToSave, currentSha);
+
+    if (result.newSha) {
+        currentSha = result.newSha;
+        lastUpdatedLocal = result.newData.last_updated;
+        setItem('lastUpdatedLocal', lastUpdatedLocal);
+        lastFetchedTasksString = JSON.stringify(tasks);
+    }
+}
+
 async function startRoutine() {
     await loadTasks();
     
@@ -97,35 +49,79 @@ async function startRoutine() {
     }, 2000);
 }
 
-function initApp() {
-    const token = getItem('githubToken');
-    if (!token) {
-        tokenModal.classList.remove('modal-hidden');
+async function loadTasks() {
+    const dataRemote = await fetchTasks();
+
+    if (dataRemote.data) {
+        const remoteTime = new Date(dataRemote.data.last_updated);
+        const localTime = lastUpdatedLocal 
+            ? new Date(lastUpdatedLocal) 
+            : null;
+
+        if(localTime === null || remoteTime > localTime){
+            tasks = dataRemote.data.tasks;
+            currentSha = dataRemote.sha;
+            lastUpdatedLocal = dataRemote.data.last_updated;
+            setItem('lastUpdatedLocal', lastUpdatedLocal);
+            lastFetchedTasksString = JSON.stringify(tasks);
+        }
     } else {
-        tokenModal.classList.add('modal-hidden');
-        startRoutine();
+        tasks = [];
+        currentSha = null;
+        lastUpdatedLocal = new Date().toISOString();
+        setItem('lastUpdatedLocal', lastUpdatedLocal);
     }
+    
+    lastFetchedTasksString = JSON.stringify(tasks);
+    
+    _renderTasks();
 }
 
-// Evento para o botão de salvar no modal
-saveTokenBtn.addEventListener('click', () => {
-    const token = tokenInput.value.trim();
+function _renderTasks(){
+    renderTasks(tasks, {
+        onDeleteTasks: handleDeleteTask,
+        onToggleTasks: handleToggleTask
+    });
+}
+
+function handleToggleTask(index) {
+    tasks[index].completed = !tasks[index].completed;
+    _renderTasks();
+    debouncedSave();
+}
+
+function handleDeleteTask(index) {
+    tasks.splice(index, 1);
+    _renderTasks();
+    debouncedSave();
+}
+
+function handleAddTask(taskText) {
+    if (taskText.trim() === '') {
+        alert("A sua nova tarefa deve ser preenchida!");
+        return;
+    }
+
+    tasks.push({ text: taskText, completed: false });
+    clearInputBox();
+    _renderTasks();
+    debouncedSave();
+}
+
+function handleSaveToken(token) {
     if (token) {
         setItem('githubToken', token);
+        const tokenModal = document.getElementById("token-modal");
         tokenModal.classList.add('modal-hidden');
-        loadTasks();
+        startRoutine();
     } else {
         alert('Por favor, insira um token válido.');
     }
-});
+}
 
-// Eventos da aplicação principal
-addButton.addEventListener('click', addTask);
-inputBox.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        addTask();
-    }
-});
-
-// Inicialização
-document.addEventListener('DOMContentLoaded', initApp);
+setupEventListeners({
+    onAddTask: handleAddTask,
+    onSaveToken: handleSaveToken,
+    getStoredToken: () => getItem('githubToken'),
+    onAppReady: startRoutine
+})
