@@ -6,5 +6,9 @@
   {
     "text": "novo%20item",
     "completed": false
+  },
+  {
+    "text": "Nova%20tarefa",
+    "completed": false
   }
 ]
