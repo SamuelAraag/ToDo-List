@@ -2,7 +2,7 @@ import { fetchTasks, saveTasks } from './apiService.js';
 import { setItem, getItem } from './localStorageService.js';
 import { renderTasks, setupEventListeners, clearInputBox } from './domService.js';
 
-const debouncedSave = debounce(saveTask, 1000);
+const debouncedSave = debounce(saveTask, 500);
 
 let tasks = [];
 let currentSha = null;
@@ -25,7 +25,7 @@ async function saveTask() {
     if (localTasksString === lastFetchedTasksString) {
         return;
     }
-
+    
     const dataToSave = {
         tasks: tasks,
         last_updated: new Date().toISOString()
@@ -39,6 +39,8 @@ async function saveTask() {
         setItem('lastUpdatedLocal', lastUpdatedLocal);
         lastFetchedTasksString = JSON.stringify(tasks);
     }
+
+    _renderTasks();
 }
 
 async function startRoutine() {
@@ -46,7 +48,7 @@ async function startRoutine() {
     
     setInterval(() => {
         loadTasks();
-    }, 2000);
+    }, 1000);
 }
 
 async function loadTasks() {
@@ -54,7 +56,7 @@ async function loadTasks() {
 
     if (dataRemote.data) {
         const remoteTime = new Date(dataRemote.data.last_updated);
-        
+
         const localTime = lastUpdatedLocal 
             ? new Date(lastUpdatedLocal) 
             : null;
