@@ -5,10 +5,6 @@
       "completed": true
     },
     {
-      "text": "nova%252520tarefa",
-      "completed": false
-    },
-    {
       "text": "asdf",
       "completed": false
     },
@@ -21,5 +17,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T14:29:07.138Z"
+  "last_updated": "2025-08-24T14:29:10.218Z"
 }
