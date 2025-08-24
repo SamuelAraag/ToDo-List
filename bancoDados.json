@@ -1,10 +1,13 @@
-[
-  {
-    "text": "%C3%A7%C3%A7%C3%A7%C3%A7",
-    "completed": false
-  },
-  {
-    "text": "novo%20item",
-    "completed": false
-  }
-]
+{
+  "last_updated": "2025-08-24T13:35:00.000Z",
+  "tasks": [
+    {
+      "text": "Estudar JavaScript",
+      "completed": true
+    },
+    {
+      "text": "Comprar pão integral",
+      "completed": false
+    }
+  ]
+}
