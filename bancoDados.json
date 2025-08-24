@@ -6,5 +6,9 @@
   {
     "text": "Executar%20processo",
     "completed": false
+  },
+  {
+    "text": "Remover%20itens",
+    "completed": false
   }
 ]
