@@ -1,13 +1,13 @@
 {
   "tasks": [
     {
-      "text": "Estudar%20JavaScript",
+      "text": "Estudar%2520JavaScript",
       "completed": false
     },
     {
-      "text": "Nova%20tarefa",
+      "text": "Nova%2520tarefa",
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T13:58:25.413Z"
+  "last_updated": "2025-08-24T13:58:27.615Z"
 }
