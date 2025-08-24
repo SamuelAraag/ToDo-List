@@ -2,7 +2,7 @@
   "tasks": [
     {
       "text": "Abobora",
-      "completed": true
+      "completed": false
     },
     {
       "text": "asdf",
@@ -21,5 +21,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-24T14:56:15.621Z"
+  "last_updated": "2025-08-24T15:34:33.317Z"
 }
