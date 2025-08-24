@@ -6,5 +6,9 @@
   {
     "text": "Criar%20outra%20coisa",
     "completed": true
+  },
+  {
+    "text": "Novo%20item!!",
+    "completed": false
   }
 ]
