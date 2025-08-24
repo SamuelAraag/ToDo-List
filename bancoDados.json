@@ -2,10 +2,6 @@
   "tasks": [
     {
       "text": "asdf",
-      "completed": true
-    },
-    {
-      "text": "asdf",
       "completed": false
     },
     {
@@ -33,5 +29,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-24T18:15:47.245Z"
+  "last_updated": "2025-08-24T18:15:53.359Z"
 }
