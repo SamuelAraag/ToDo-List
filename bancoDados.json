@@ -2,7 +2,7 @@
   "tasks": [
     {
       "text": "Primeira%20tarefa",
-      "completed": false
+      "completed": true
     },
     {
       "text": "Segundo%20tarefa",
@@ -13,5 +13,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T19:24:28.772Z"
+  "last_updated": "2025-08-24T19:24:30.354Z"
 }
