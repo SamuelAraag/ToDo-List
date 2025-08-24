@@ -68,6 +68,7 @@ function addTask() {
 }
 
 async function saveTask() {
+    await loadTasks();
     currentSha = await saveTasks(tasks, currentSha);
 }
 
