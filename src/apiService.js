@@ -60,7 +60,7 @@ async function fetchTasks() {
  * @returns {Promise<string|null>} O novo SHA do arquivo ou null em caso de erro.
  */
 async function saveTasks(dataToSave, sha) {
-    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}?ref=${refBranch}`;
+    const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
     
     dataToSave.tasks.forEach(task => {
         task.text = encodeURIComponent(task.text);
@@ -73,7 +73,8 @@ async function saveTasks(dataToSave, sha) {
     const body = {
         message: 'Atualiza tarefas via API',
         content: content,
-        sha: sha
+        sha: sha,
+        branch: refBranch
     };
     
     try {
