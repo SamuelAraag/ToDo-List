@@ -31,41 +31,43 @@ async function fetchTasks() {
         
         if (!response.ok) {
             if (response.status === 404) {
-                return { sha: null, tasks: [] };
+                return { sha: null, fileData: [] };
             }
             throw new Error(`Erro ao buscar o arquivo: ${response.statusText}`);
         }
         
-        const data = await response.json();
-        const decodedContent = decodeURIComponent(atob(data.content));
+        const fileData = await response.json();
+        const decodedContent = decodeURIComponent(atob(fileData.content));
 
         if (decodedContent.trim() === '') {
-            return { sha: data.sha, tasks: [] };
+            return { sha: fileData.sha, data: null };
         }
 
-        const tasks = JSON.parse(decodedContent);
+        const data = JSON.parse(decodedContent);
 
-        return { sha: data.sha, tasks: tasks };
+        return { sha: fileData.sha, data: data };
     } catch (error) {
         console.error('Falha na requisição GET:', error);
-        return { sha: null, tasks: [] };
+        return { sha: null, data: null };
     }
 }
 
 /**
  * Salva a lista de tarefas no arquivo JSON do GitHub.
- * @param {Array} tasks A lista de tarefas a ser salva.
+ * @param {Array} dataToSave A lista de tarefas a ser salva.
  * @param {string} sha O SHA do arquivo atual.
  * @returns {Promise<string|null>} O novo SHA do arquivo ou null em caso de erro.
  */
-async function saveTasks(tasks, sha) {
+async function saveTasks(dataToSave, sha) {
     const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
     
-    tasks.forEach(task => {
+    dataToSave.tasks.forEach(task => {
         task.text = encodeURIComponent(task.text);
     });
+
+    dataToSave.last_updated = new Date().toISOString();
     
-    const content = btoa(JSON.stringify(tasks, null, 2));
+    const content = btoa(JSON.stringify(dataToSave, null, 2));
 
     const body = {
         message: 'Atualiza tarefas via API',
@@ -85,11 +87,10 @@ async function saveTasks(tasks, sha) {
         }
 
         const data = await response.json();
-        return data.content.sha;
-        
+        return { newSha: data.content.sha, newData: dataToSave };
     } catch (error) {
         console.error('Falha na requisição PUT:', error);
-        return null;
+        return { newSha: null, newData: null };
     }
 }
 
