@@ -1,18 +1,14 @@
 [
   {
-    "text": "Estudar JavaScript",
+    "text": "Comprar%20p%C3%83%C2%A3o%20integral",
     "completed": true
   },
   {
-    "text": "Comprar pÃ£o integral",
-    "completed": true
-  },
-  {
-    "text": "novo item",
+    "text": "novo%20item",
     "completed": false
   },
   {
-    "text": "aplicação",
+    "text": "aplica%C3%A7%C3%A3o",
     "completed": false
   }
 ]
