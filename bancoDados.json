@@ -2,7 +2,7 @@
   "tasks": [
     {
       "text": "Nova%20tarefa",
-      "completed": false
+      "completed": true
     },
     {
       "text": "1",
@@ -29,5 +29,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-24T18:42:44.011Z"
+  "last_updated": "2025-08-24T18:42:46.694Z"
 }
