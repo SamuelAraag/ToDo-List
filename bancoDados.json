@@ -5,7 +5,7 @@
       "completed": true
     },
     {
-      "text": "nova%2525252520tarefa",
+      "text": "nova%252520tarefa",
       "completed": false
     },
     {
@@ -17,9 +17,9 @@
       "completed": false
     },
     {
-      "text": "%2525C3%2525A7%2525C3%2525A7%2525C3%2525A7%2525C3%2525A7",
-      "completed": false
+      "text": "%C3%A7%C3%A7%C3%A7%C3%A7",
+      "completed": true
     }
   ],
-  "last_updated": "2025-08-24T14:28:00.686Z"
+  "last_updated": "2025-08-24T14:28:52.163Z"
 }
