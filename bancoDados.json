@@ -1,13 +1,9 @@
 {
   "tasks": [
     {
-      "text": "asdf",
-      "completed": true
-    },
-    {
       "text": "Nova%20tarefa",
       "completed": true
     }
   ],
-  "last_updated": "2025-08-24T18:20:50.974Z"
+  "last_updated": "2025-08-24T18:21:02.985Z"
 }
