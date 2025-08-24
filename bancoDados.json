@@ -2,7 +2,7 @@
   "tasks": [
     {
       "text": "Abobora",
-      "completed": true
+      "completed": false
     },
     {
       "text": "Nova%20tarefa",
@@ -13,5 +13,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-24T18:12:30.117Z"
+  "last_updated": "2025-08-24T18:12:35.547Z"
 }
