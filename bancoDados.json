@@ -5,10 +5,6 @@
       "completed": true
     },
     {
-      "text": "1",
-      "completed": true
-    },
-    {
       "text": "2",
       "completed": false
     },
@@ -29,5 +25,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T18:46:09.468Z"
+  "last_updated": "2025-08-24T18:46:13.194Z"
 }
