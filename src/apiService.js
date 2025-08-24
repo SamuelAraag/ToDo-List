@@ -23,7 +23,11 @@ function getHeaders() {
 async function fetchTasks() {
     const url = `${API_BASE_URL}/repos/${owner}/${repo}/contents/${filePath}`;
     try {
-        const response = await fetch(url, { headers: getHeaders() });
+        const response = await fetch(url, 
+            { 
+                headers: getHeaders(),
+                cache: 'no-store'
+            });
         
         if (!response.ok) {
             if (response.status === 404) {
@@ -40,10 +44,7 @@ async function fetchTasks() {
         }
 
         const tasks = JSON.parse(decodedContent);
-        tasks.forEach(task =>{
-            task.text = decodeURIComponent(task.text)
-        })
-        
+
         return { sha: data.sha, tasks: tasks };
     } catch (error) {
         console.error('Falha na requisição GET:', error);

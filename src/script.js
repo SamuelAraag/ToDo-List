@@ -17,7 +17,8 @@ let currentSha = null;
 function renderTasks() {
     listContainer.innerHTML = '';
     tasks.forEach((task, index) => {
-        task.text = decodeURIComponent(task.text)
+        task.text = decodeURIComponent(task.text);
+
         const li = document.createElement("li");
         li.textContent = task.text;
 
@@ -68,10 +69,6 @@ function addTask() {
 
 async function saveTask() {
     currentSha = await saveTasks(tasks, currentSha);
-    
-    tasks.forEach(task => {
-        task.text = decodeURIComponent(task.text)
-    })
 }
 
 async function loadTasks() {
@@ -91,13 +88,21 @@ function debounce(func, delay) {
     };
 }
 
+async function startRoutine() {
+    await loadTasks();
+    
+    setInterval(() => {
+        loadTasks();
+    }, 2000);
+}
+
 function initApp() {
     const token = getItem('githubToken');
     if (!token) {
-        tokenModal.classList.remove('modal-hidden'); // Mostra o modal
+        tokenModal.classList.remove('modal-hidden');
     } else {
-        tokenModal.classList.add('modal-hidden'); // Esconde o modal
-        loadTasks();
+        tokenModal.classList.add('modal-hidden');
+        startRoutine();
     }
 }
 
