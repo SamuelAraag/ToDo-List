@@ -1,13 +1,13 @@
 {
   "tasks": [
     {
-      "text": "Estudar%20JavaScript",
+      "text": "Estudar%2520JavaScript",
       "completed": true
     },
     {
-      "text": "Comprar%20p%C3%83%C2%A3o%20integral",
+      "text": "Comprar%2520p%25C3%2583%25C2%25A3o%2520integral",
       "completed": false
     }
   ],
-  "last_updated": "2025-08-24T13:57:19.330Z"
+  "last_updated": "2025-08-24T13:57:22.415Z"
 }
