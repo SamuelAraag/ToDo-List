@@ -18,5 +18,9 @@
   {
     "text": "Criar%20conceito%20de%20banco%20de%20dados%20no%20reposit%C3%B3rio",
     "completed": true
+  },
+  {
+    "text": "Possibilitar%20editar%20texto%20da%20tarefa",
+    "completed": false
   }
 ]
