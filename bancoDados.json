@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Agora%20sim%20est%C3%A1%20funcionando",
-      "completed": true
-    },
-    {
-      "text": "Nova",
-      "completed": true
-    },
-    {
       "text": "Aaaaa",
       "completed": true
     },
@@ -53,5 +45,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-25T11:29:14.543Z"
+  "last_updated": "2025-08-25T11:29:15.497Z"
 }
