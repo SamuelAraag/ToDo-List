@@ -6,7 +6,7 @@
     },
     {
       "text": "Agora%20sim%20est%C3%A1%20funcionando",
-      "completed": true
+      "completed": false
     },
     {
       "text": "Nova",
@@ -18,8 +18,8 @@
     },
     {
       "text": "Ola!",
-      "completed": true
+      "completed": false
     }
   ],
-  "last_updated": "2025-08-25T11:27:01.505Z"
+  "last_updated": "2025-08-25T11:28:39.737Z"
 }
