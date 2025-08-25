@@ -1,22 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Aaaaa",
-      "completed": true
-    },
-    {
-      "text": "Ola!",
-      "completed": true
-    },
-    {
-      "text": "a",
-      "completed": true
-    },
-    {
-      "text": "a",
-      "completed": true
-    },
-    {
       "text": "a",
       "completed": true
     },
@@ -45,5 +29,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-25T11:29:15.497Z"
+  "last_updated": "2025-08-25T11:29:16.585Z"
 }
