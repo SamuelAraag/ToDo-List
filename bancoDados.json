@@ -2,11 +2,11 @@
   "tasks": [
     {
       "text": "Nova%20tarefa",
-      "completed": true
+      "completed": false
     },
     {
       "text": "outra%20tarefa",
-      "completed": true
+      "completed": false
     },
     {
       "text": "Agora%20sim%20est%C3%A1%20funcionando",
@@ -29,5 +29,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-08-25T11:26:29.462Z"
+  "last_updated": "2025-08-25T11:26:30.432Z"
 }
