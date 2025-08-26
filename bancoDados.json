@@ -1,13 +1,9 @@
 {
   "tasks": [
     {
-      "text": "Outra%20tarefa",
-      "completed": true
-    },
-    {
       "text": "outra%20tarefa",
       "completed": true
     }
   ],
-  "last_updated": "2025-08-26T11:29:43.351Z"
+  "last_updated": "2025-08-26T11:29:44.143Z"
 }
