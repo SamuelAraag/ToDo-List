@@ -23,7 +23,11 @@
     {
       "text": "executar%20o%20teste%20e%20salvar%20o%20relatorio",
       "completed": true
+    },
+    {
+      "text": "Executar%20os%20testes%20da%20camada%20Angular",
+      "completed": false
     }
   ],
-  "last_updated": "2025-08-28T15:48:24.373Z"
+  "last_updated": "2025-08-28T15:48:42.230Z"
 }
