@@ -14,7 +14,7 @@
     },
     {
       "text": "Criar%20relatorio%20dos%20testes%20-%20angular",
-      "completed": false
+      "completed": true
     },
     {
       "text": "criar%20testes%20Angular%20rodarem%20-%20ng%20test",
@@ -25,5 +25,5 @@
       "completed": true
     }
   ],
-  "last_updated": "2025-08-28T15:48:23.235Z"
+  "last_updated": "2025-08-28T15:48:24.373Z"
 }
