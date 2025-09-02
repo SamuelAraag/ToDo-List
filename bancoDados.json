@@ -1,9 +1,9 @@
 {
   "tasks": [
     {
-      "text": "executar%20o%20teste%20e%20salvar%20o%20relatorio",
-      "completed": true
+      "text": "Incluir%20icone%20da%20aplica%C3%A7%C3%A3o%20no%20To-Do%20List",
+      "completed": false
     }
   ],
-  "last_updated": "2025-09-02T22:26:10.029Z"
+  "last_updated": "2025-09-02T22:26:22.271Z"
 }
