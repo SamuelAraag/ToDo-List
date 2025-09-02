@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Remover%20tema%20dinamico%20do%20angular%20model",
-      "completed": true
-    },
-    {
-      "text": "Criar%20relatorio%20dos%20testes%20-%20angular",
-      "completed": true
-    },
-    {
       "text": "criar%20testes%20Angular%20rodarem%20-%20ng%20test",
       "completed": true
     },
@@ -25,5 +17,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-09-02T22:26:06.308Z"
+  "last_updated": "2025-09-02T22:26:07.649Z"
 }
