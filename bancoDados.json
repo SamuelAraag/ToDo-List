@@ -23,7 +23,11 @@
     {
       "text": "Executar%20os%20testes%20da%20camada%20Angular",
       "completed": true
+    },
+    {
+      "text": "Atualiza%C3%A7%C3%A3o%20do%20README",
+      "completed": false
     }
   ],
-  "last_updated": "2025-09-02T10:01:42.917Z"
+  "last_updated": "2025-09-02T10:04:12.348Z"
 }
