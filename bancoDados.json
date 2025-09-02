@@ -1,10 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Reavaliar%20o%20PDI%20-%20Focando%20T%C3%A9c",
-      "completed": true
-    },
-    {
       "text": "Remover%20tema%20dinamico%20do%20angular%20model",
       "completed": true
     },
@@ -29,5 +25,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-09-02T20:31:16.230Z"
+  "last_updated": "2025-09-02T22:26:06.308Z"
 }
