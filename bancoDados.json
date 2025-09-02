@@ -1,17 +1,9 @@
 {
   "tasks": [
     {
-      "text": "criar%20testes%20Angular%20rodarem%20-%20ng%20test",
-      "completed": true
-    },
-    {
       "text": "executar%20o%20teste%20e%20salvar%20o%20relatorio",
       "completed": true
-    },
-    {
-      "text": "Atualiza%C3%A7%C3%A3o%20do%20README",
-      "completed": false
     }
   ],
-  "last_updated": "2025-09-02T22:26:08.450Z"
+  "last_updated": "2025-09-02T22:26:10.029Z"
 }
