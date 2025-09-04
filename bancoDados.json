@@ -10,12 +10,12 @@
     },
     {
       "text": "Parar%20de%20atualizar%20quando%20n%C3%A3o%20tiver%20intera%C3%A7%C3%A3o",
-      "completed": false
+      "completed": true
     },
     {
       "text": "botao%20sair%20deve%20trocar%20com%20logar%20quando%20sem%20token",
       "completed": false
     }
   ],
-  "last_updated": "2025-09-04T12:27:49.402Z"
+  "last_updated": "2025-09-04T12:27:50.378Z"
 }
