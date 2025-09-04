@@ -1,10 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Incluir%20icone%20da%20aplica%C3%A7%C3%A3o%20no%20To-Do%20List",
-      "completed": true
-    },
-    {
       "text": "Colocar%20try-catch%20nas%20requisi%C3%A7%C3%B5es",
       "completed": false
     },
@@ -21,5 +17,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-09-03T11:05:23.552Z"
+  "last_updated": "2025-09-04T11:21:37.345Z"
 }
