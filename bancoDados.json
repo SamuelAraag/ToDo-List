@@ -2,7 +2,7 @@
   "tasks": [
     {
       "text": "Colocar%20try-catch%20nas%20requisi%C3%A7%C3%B5es",
-      "completed": false
+      "completed": true
     },
     {
       "text": "Bot%C3%A3o%2C%20remover%20token",
@@ -10,12 +10,12 @@
     },
     {
       "text": "Parar%20de%20atualizar%20quando%20n%C3%A3o%20tiver%20intera%C3%A7%C3%A3o",
-      "completed": true
+      "completed": false
     },
     {
       "text": "botao%20sair%20deve%20trocar%20com%20logar%20quando%20sem%20token",
       "completed": false
     }
   ],
-  "last_updated": "2025-09-04T12:27:53.630Z"
+  "last_updated": "2025-09-04T12:28:07.090Z"
 }
