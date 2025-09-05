@@ -1,3 +1,17 @@
+// Exibe o modal de erro com mensagem customizada
+export function showErrorModal(message) {
+    debugger
+    const errorModal = document.getElementById('error-modal');
+    const errorMessage = document.getElementById('error-modal-message');
+    const closeBtn = document.getElementById('close-error-modal');
+    errorMessage.textContent = message || 'Não foi possível buscar as tarefas. Tente novamente mais tarde.';
+    errorModal.classList.remove('modal-hidden');
+    errorModal.classList.add('modal-visible');
+    closeBtn.onclick = () => {
+        errorModal.classList.remove('modal-visible');
+        errorModal.classList.add('modal-hidden');
+    };
+}
 export function renderTasks(tasks, callBacks){
     const listContainer = document.getElementById('list-container');
     listContainer.innerHTML = '';
