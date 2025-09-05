@@ -140,6 +140,8 @@ ul li span:hover {
 
 .titulo-todo-list {
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 34px;
 }
 
 /* Modal */
@@ -265,4 +267,8 @@ ul li span:hover {
 .info-container {
     position: relative;
     margin-bottom: 20px;
+}
+
+.hidden-button{
+    display: none;
 }
