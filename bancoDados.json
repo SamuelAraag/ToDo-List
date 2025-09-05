@@ -11,7 +11,11 @@
     {
       "text": "botao%20sair%20deve%20trocar%20com%20logar%20quando%20sem%20token",
       "completed": false
+    },
+    {
+      "text": "valida%C3%A7%C3%A3o%20de%20requisi%C3%A7%C3%A3o%20-%20try-catch",
+      "completed": false
     }
   ],
-  "last_updated": "2025-09-05T01:45:14.304Z"
+  "last_updated": "2025-09-05T01:45:25.799Z"
 }
