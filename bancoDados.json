@@ -1,10 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Colocar%20try-catch%20nas%20requisi%C3%A7%C3%B5es",
-      "completed": false
-    },
-    {
       "text": "Bot%C3%A3o%2C%20remover%20token",
       "completed": true
     },
@@ -17,5 +13,5 @@
       "completed": false
     }
   ],
-  "last_updated": "2025-09-05T00:55:54.458Z"
+  "last_updated": "2025-09-05T01:45:14.304Z"
 }
