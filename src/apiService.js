@@ -50,7 +50,6 @@ async function fetchTasks() {
     } catch (error) {
         //console.error('Falha na requisição GET:', error);
         import('./domService.js').then(mod => {
-            debugger
             mod.showErrorModal('Não foi possível buscar as tarefas. Tente novamente mais tarde.');
         });
         return { sha: null, data: null };
