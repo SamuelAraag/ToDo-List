@@ -1,6 +1,5 @@
 // Exibe o modal de erro com mensagem customizada
 export function showErrorModal(message) {
-    debugger
     const errorModal = document.getElementById('error-modal');
     const errorMessage = document.getElementById('error-modal-message');
     const closeBtn = document.getElementById('close-error-modal');
@@ -87,4 +86,8 @@ export function setupEventListeners(callbacks) {
 export function clearInputBox() {
     const inputBox = document.getElementById("input-box");
     inputBox.value = "";
+}
+
+export function reloadPage() {
+    window.document.location.reload();
 }

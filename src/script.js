@@ -1,11 +1,12 @@
 import { fetchTasks, saveTasks } from './apiService.js';
 import { setItem, getItem, removeItem } from './localStorageService.js';
-import { renderTasks, setupEventListeners, clearInputBox } from './domService.js';
+import { renderTasks, setupEventListeners, clearInputBox, reloadPage } from './domService.js';
 import { APP_CONSTANTS } from './constants/app.constants.js';
 
 let tasks = [];
 let currentSha = null;
 let lastUpdatedLocal = null;
+let intervalId = null;
 let lastFetchedTasksString = '[]'; 
 
 async function saveTask() {
@@ -34,8 +35,7 @@ async function saveTask() {
 
 async function startRoutine() {
     await loadTasks();
-    
-    setInterval(() => {
+    intervalId = setInterval(() => {
         loadTasks();
     }, 3000);
 }
@@ -43,7 +43,15 @@ async function startRoutine() {
 async function loadTasks() {
     _verifyAndShowLogOut();
     _verifyAndShowLoadTasks();
-    const dataRemote = await fetchTasks();
+    let dataRemote;
+    try {
+        dataRemote = await fetchTasks();
+    } catch (error) {
+        if (intervalId) clearInterval(intervalId);
+        const tokenModal = document.getElementById("token-modal");
+        tokenModal.classList.remove('modal-hidden');
+        return;
+    }
 
     const tasksBeforeLoad = JSON.stringify(tasks);
 
@@ -66,6 +74,10 @@ async function loadTasks() {
         currentSha = null;
         lastUpdatedLocal = new Date().toISOString();
         setItem(APP_CONSTANTS.STORAGE_KEYS.LAST_UPDATE_TASKS, lastUpdatedLocal);
+        if (intervalId) clearInterval(intervalId);
+        const tokenModal = document.getElementById("token-modal");
+        tokenModal.classList.remove('modal-hidden');
+        return;
     }
 
     const tasksAfterLoad = JSON.stringify(tasks);
@@ -115,10 +127,9 @@ function handleAddTask(taskText) {
 
 function handleSaveToken(token) {
     if (token) {
-        setItem(APP_CONSTANTS.STORAGE_KEYS.GITHUB_TOKEN, token);
-        const tokenModal = document.getElementById("token-modal");
-        tokenModal.classList.add('modal-hidden');
-        startRoutine();
+    setItem(APP_CONSTANTS.STORAGE_KEYS.GITHUB_TOKEN, token);
+    reloadPage();
+    startRoutine();
     } else {
         alert('Por favor, insira um token válido.');
     }
