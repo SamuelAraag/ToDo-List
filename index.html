@@ -13,6 +13,8 @@
             <div class="titulo-todo-list">
                 <h2>To-Do List
                 </h2>
+                <button id="logout-remove-token" class="hidden-button">Sair</button>
+                <button id="id-button-load-tasks" class="hidden-button">Carregar tarefas</button>
             </div>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Adicione sua tarefa">
@@ -47,5 +49,15 @@
     </div>
 
     <script type="module" src="src/script.js"></script>
+</body>
+
+<!-- Modal de erro para requisições -->
+<div id="error-modal" class="modal-hidden">
+    <div class="modal-content">
+        <h3>Erro ao buscar tarefas</h3>
+        <p id="error-modal-message">Não foi possível buscar as tarefas. Tente novamente mais tarde.</p>
+        <button id="close-error-modal">Fechar</button>
+    </div>
+</div>
 </body>
 </html>
